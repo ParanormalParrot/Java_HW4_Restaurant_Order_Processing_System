@@ -1,4 +1,6 @@
 package com.example.order_service.manager;
+import com.example.hw4.authentification.Response;
+import com.example.order_service.Order;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,8 +12,6 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderAddingResponse {
-    private String email;
-    private List<DishQuantity> dishes;
-    private String specialRequests;
+public class OrderAddingResponse extends Response {
+    private Order order;
 }

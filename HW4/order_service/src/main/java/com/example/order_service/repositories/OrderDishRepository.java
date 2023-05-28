@@ -1,5 +1,8 @@
 package com.example.order_service.repositories;
 
-public class OrderDishRepository {
 
+import com.example.order_service.OrderDish;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface OrderDishRepository extends JpaRepository<OrderDish, Integer> {
 }
