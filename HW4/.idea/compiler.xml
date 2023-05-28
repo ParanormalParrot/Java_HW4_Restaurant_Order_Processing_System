@@ -8,12 +8,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="authentification_service" />
+        <module name="order_service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="untitled" target="19" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="authentification_service" options="-parameters" />
+      <module name="order_service" options="-parameters" />
+      <module name="untitled" options="-parameters" />
     </option>
   </component>
 </project>

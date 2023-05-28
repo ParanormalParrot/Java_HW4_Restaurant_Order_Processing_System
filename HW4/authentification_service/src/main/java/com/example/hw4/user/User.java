@@ -1,5 +1,6 @@
 package com.example.hw4.user;
 
+import com.example.hw4.Session;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,13 +37,17 @@ public class User implements UserDetails {
     private String passwordHash;
 
     @Column(name = "role", length = 10, nullable = false)
-    private String role;
+    private Role role;
 
     @Column(name = "created_at")
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private List<Session> sessions;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
