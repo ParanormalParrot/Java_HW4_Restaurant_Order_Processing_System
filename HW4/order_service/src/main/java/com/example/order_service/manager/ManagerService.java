@@ -3,6 +3,9 @@ package com.example.order_service.manager;
 
 import com.example.hw4.repositories.UserRepository;
 import com.example.order_service.Dish;
+import com.example.order_service.Order;
+import com.example.order_service.OrderDish;
+import com.example.order_service.OrderStatus;
 import com.example.order_service.repositories.DishRepository;
 import com.example.order_service.repositories.OrderDishRepository;
 import com.example.order_service.repositories.OrderRepository;
@@ -38,7 +41,7 @@ public class ManagerService {
                 .build();
     }
 
-    public StatusResponse addOrderDish(AddOrderDishRequest request) {
+    public StatusResponse addOrderDish(OrderDishAddingRequest request) {
         var user = userRepository.findByEmail(request.getEmail()).get();
         var order = Order.builder()
                 .userId(user.getId())
